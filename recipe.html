@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+        body {
+            font-family:  Nunito, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+.navbar{
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 40px;
+  background: white;
+}
+
+.logo img{
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: color .3s;
+}
+
+.nav-links a:hover{
+    color: aqua;
+}
+
+.icons span{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icons img{
+    width: 25px;
+}
+
+        /* Hero Section */
+.recipes-hero {
+  background: url("https://www.alaninu.com/cdn/shop/files/recipes_2500x.jpg?v=1630341550") center/cover no-repeat;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipes-hero h1 {
+  font-size: 60px;
+  color: white;
+  font-weight: 700;
+}
+
+/* Wrapper */
+.recipes-wrapper {
+  width: 90%;
+  margin: 50px auto;
+}
+
+/* Filter */
+.filter-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+.filter-box select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Recipe Card */
+.recipe-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  gap: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: .3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Text Info */
+.recipe-info h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #66c9ba;
+}
+
+.recipe-info p {
+  color: #777;
+}
+
+.tag {
+  display: inline-block;
+  background: #E7F6F5;
+  color: #4ab7b1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #888;
+  margin: 10px 0;
+}
+
+/* Button */
+.view-btn {
+  background: #7566AD;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.view-btn:hover {
+  background:#66c9ba;
+}
+
+
+.alani-footer{
+ background: linear-gradient(90deg, #cceee8, #e0c8eb, #f9d9b8);
+  padding: 50px 10%;
+  color: #5c5b5b;
+  font: 14px;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footer-links div p{
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+
+.footer-btn{
+  background: #7b67d0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  width: 220px;
+  font-weight: bold;
+
+}
+
+.box{
+  font-weight: lighter;
+}
+
+
+.footer-bottom{
+  background: #7b67d0;
+  padding: 20px 10%;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* right side text spacing */
+.footer-bottom .right span {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media(max-width: 600px){
+  .footer-bottom{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom .right span{
+    margin-left: 10px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="logo">
+        <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif" alt="">
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./recipe.html">Recipe</a></li>
+            <li><a href="./learn.html">Learn</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <span><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-512.png"></span>
+        <span><img src="https://cdn0.iconfinder.com/data/icons/bazaar-1/64/store_shop_restaurant_grow_shop_mobile_store_coffee_shop_business_mall_stores_commerce_-128.png"></span> 
+        <span><img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/user4-128.png"></span>   
+        <span><img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/bag4-128.png"></span>        
+    </div>
+</header>
+    <!-- Hero Section -->
+<section class="recipes-hero">
+  <h1>Recipes</h1>
+</section>
+
+<!-- Filter + Container -->
+<div class="recipes-wrapper">
+
+  <div class="filter-box">
+    <select>
+      <option>All Categories</option>
+      <option>Breakfast</option>
+      <option>Snacks</option>
+      <option>Treats</option>
+    </select>
+  </div>
+
+  <!-- Recipe Card -->
+  <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/Image_6_800x.jpg?v=1685994150">
+
+    <div class="recipe-info">
+      <h2>STRAWBERRY AND CREAM OATMEAL</h2>
+      <p>Time oat! Take a break and check out this quick and delish breakfast recipe.</p>
+      <span class="tag">Breakfast</span>
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+      <button class="view-btn">OAT YEAH</button>
+    </div>
+  </div>
+
+    <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/MicrosoftTeams-image_1_800x.png?v=168624199">
+
+    <div class="recipe-info">
+      <h2>CHOCOLATE LOVER'S COLLAGEN SKILLET COOKIE</h2>
+      <p>If you haven’t baked with our Unflavored Collagen Peptides yet, this is your sign to start! This Chocolate Lover’s Collagen Skillet Cookie is choc-full of yum.</p>
+      
+      <span class="tag">Treats</span>
+
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+
+      <button class="view-btn">DISH IT OUT</button>
+    </div>
+  </div>
+
+
+
+    <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/Image_4_800x.jpg?v=1641982931">
+
+    <div class="recipe-info">
+      <h2>FLUFFY PROTEIN TOASTER WAFFLES</h2>
+      <p>Rushing out the door without breakfast again? We get it! Our make-ahead Fluffy Protein Toaster Waffles are the perfect solution.</p>
+      
+      <span class="tag">Breakfast</span>
+
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+
+      <button class="view-btn">STACK 'EM UP</button>
+    </div>
+  </div>
+
+
+    <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/Image_3_400x.jpg?v=1641982884">
+
+    <div class="recipe-info">
+      <h2>BREEZEBERRY ENERGY SLUSHIE</h2>
+      <p>Let’s cool off and go for a spin! Breezeberry Energy is a whole lot more refreshing in this berrylicious whirlwind of a slushie.</p>
+      
+      <span class="tag">Breakfast</span>
+
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+
+      <button class="view-btn">IT'S A BREEZE</button>
+    </div>
+  </div>
+
+
+    <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/Image_2_400x.jpg?v=1641982852">
+
+    <div class="recipe-info">
+      <h2>SPINEAPPLE PEACH POPSICLESL</h2>
+      <p>Pop it like it’s hot. These Pineapple Peach Popsicles will cool you down and have you feeling hydrated before you know it.</p>
+      
+      <span class="tag">Breakfast</span>
+
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+
+      <button class="view-btn">PEACHY POPS</button>
+    </div>
+  </div>
+
+
+
+    <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/Image_1_6746fd9b-4c88-4007-94a7-54467ba40087_400x.jpg?v=1641982771">
+
+    <div class="recipe-info">
+      <h2>CHOCOLATE PROTEIN NICE CREAM</h2>
+      <p>Chocolate Protein Nice Cream — Nope, that’s not a typo. Our take on a healthier ice cream alternative will curb those sweet cravings and help you reach your protein goals!</p>
+      
+      <span class="tag">Breakfast</span>
+
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+
+      <button class="view-btn">NICE CREAM TIME</button>
+    </div>
+  </div>
+
+
+    <div class="recipe-card">
+    <img src="https://www.alaninu.com/cdn/shop/articles/Image_400x.jpg?v=1641982730">
+    <div class="recipe-info">
+      <h2>PEANUT BUTTER MUNCHIES BROWNIES</h2>
+      <p>When in doubt, just add peanut butter. Our Peanut Butter Munchies Brownies are here for both the chocolate & peanut butter lovers.</p>
+      
+      <span class="tag">Breakfast</span>
+
+      <p class="meta">by Alani Nutrition &nbsp; | &nbsp; January 12, 2022</p>
+
+      <button class="view-btn">BETTER BROWNIES</button>
+    </div>
+  </div>
+
+</div>
+<footer class="alani-footer">
+  <div class="footer-links">
+
+  <div>
+  <p>SHOP</p>
+  <p>REWARDS</p>
+  <p>RECIPES</p>
+  <p>AMBASSADOR PROGRAM</p>
+  </div>
+  
+    <div>
+      <p>FIND A STORE</p>
+      <p>ABOUT ALANI</p>
+      <p>FAQS</p>
+      <p>RETURNS POLICY</p>
+      <p>SHIPPING POLICY</p>
+    </div>
+
+    <div>
+      <p>FOLLOW US</p>
+      <div class="box">
+      <p>INSTAGRAM</p>
+      <p>TIKTOK</p>
+      <p>META</p>
+      <p>X</p>
+      </div>
+    </div>
+
+    <div>
+      <button class="footer-btn">DO NOT SELL OR SHARE MY PERSONAL INFORMATION</button>
+       <div class="logo" >
+      <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif">
+    </div>
+    </div>
+
+      </div>
+      
+</footer>
+
+<section>
+  <div class="footer-bottom">
+    <div class="left">
+      © 2025 Alani Nu, LLC.
+    </div>
+
+    <div class="right">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+      <span>Accessibility Statement</span>
+      <span>Contact</span>
+    </div>
+  </div>
+
+</body>
+</html>

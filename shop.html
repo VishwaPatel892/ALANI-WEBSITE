@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;            
+}
+
+.navbar{
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 40px;
+  background: white;
+}
+
+.logo img{
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: color .3s;
+}
+
+.nav-links a:hover{
+    color: aqua;
+}
+
+.icons span{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icons img{
+    width: 25px;
+}
+
+.hero-all-products{
+    background: url('https://www.alaninu.com/cdn/shop/files/ALL_Shop_All_Collections_Banner_-_Desktop_1_2500x.jpg?v=1725024080')center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-all-products h1{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+/* ✅ Correct container name */
+.product-container{
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 40px;
+}
+
+.product-card{
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 6px 30px rgba(0,0,0,.08);
+    transition: .3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img{
+    width: 100%;
+    display: block;
+}
+
+.product-info {
+  padding-top: 10px;
+}
+
+.type {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4ab7b1;
+  letter-spacing: 1px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+  font-weight: 700;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: gray;
+}
+
+.colors {
+  margin: 7px 0;
+}
+
+.color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.c1 { background: #ff4c5a; }
+.c2 { background: #fca316; }
+.c3 { background: #e61ec1; }
+.c4 { background: #24c6ff; }
+.c5 { background: #e80063; }
+.c6 { background: #8a59ff; }
+
+.more { font-size: 12px; color: #999; }
+
+.price {
+  font-weight: 700;
+  display: inline-block;
+}
+
+.old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* ✅ Add to cart button */
+.add-cart-btn {
+  width: 100%;
+  background: #56c7c2;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s ease;
+}
+
+.product-card:hover .add-cart-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile */
+@media(max-width: 650px){
+  .hero-all-products{
+    height: 250px;
+  }
+  .hero-all-products h1{
+    font-size: 32px;
+  }
+}
+
+.alani-footer{
+  background: linear-gradient(to right, #c5ffe9, #d8c8ff );
+  padding: 50px 10%;
+  color: #5c5b5b;
+  font: 14px;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footer-links div p{
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+
+.footer-btn{
+  background: #7b67d0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  width: 220px;
+  font-weight: bold;
+
+}
+
+.box{
+  font-weight: lighter;
+}
+
+
+.footer-bottom{
+  background: #7b67d0;
+  padding: 20px 10%;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* right side text spacing */
+.footer-bottom .right span {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media(max-width: 600px){
+  .footer-bottom{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom .right span{
+    margin-left: 10px;
+  }
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif" alt="">
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./recipe.html">Recipe</a></li>
+            <li><a href="./learn.html">Learn</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <span><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-512.png"></span>
+        <span><img src="https://cdn0.iconfinder.com/data/icons/bazaar-1/64/store_shop_restaurant_grow_shop_mobile_store_coffee_shop_business_mall_stores_commerce_-128.png"></span> 
+        <span><img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/user4-128.png"></span>   
+        <span><img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/bag4-128.png"></span>        
+    </div>
+</header>
+
+<section class="hero-all-products">
+    <h1>Our complete collection</h1>
+</section>
+
+<section class="product-container">
+
+<!-- ✅ Product 1 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/2_06425c47-b99c-4389-bae8-11b68bd7b9b4_600x.png?v=1715007721">
+    <div class="product-info">
+        <span class="type">DRINKS</span>
+        <h3>ENERGY DRINK</h3>
+        <p>Orange Kiss / 12 pack</p>
+
+        <div class="colors">
+            <span class="color c1"></span>
+            <span class="color c2"></span>
+            <span class="color c3"></span>
+            <span class="color c4"></span>
+            <span class="more">+ 11 more</span>
+        </div>
+
+        <span class="price">$29.99</span>
+        <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+<!-- ✅ Product 2 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/MiniEnergy4pk_Cherry_Twist_CHTFront_400x.png?v=1736367445" alt="">
+    <div class="product-info">
+      <span class="type">DRINKS</span>
+      <h3>MINI ENERGY</h3>
+      <p>Cherry Twist / 24 pack</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c5"></span>
+        <span class="more">+ 1 more</span>
+      </div>
+
+      <span class="price">$49.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+<!-- ✅ Product 3 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/PinkSlush_Bundle-ProductFront_0a10c804-b380-46f0-ae57-90c7d08c36c0_400x.png?v=1740417197" alt="">
+    <div class="product-info">
+      <span class="type">BUNDLE</span>
+      <h3>ENERGY DRINK & PRE-WORKOUT</h3>
+      <p>Pink Slush / 12pk & 30srv</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c4"></span>
+        <span class="more">+ 1 more</span>
+      </div>
+
+      <span class="price old">$69.98</span>
+      <span class="price">$59.98</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+<!-- ✅ Product 4 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/AN_energy_10serve_carton_1serve_stick_US_CosmicStardust_PROFILE_0000_web_1_400x.png?v=1748967361" alt="">
+    <div class="product-info">
+      <span class="type">BUNDLE</span>
+      <h3>ENERGY DRINK & PRE-WORKOUT</h3>
+      <p>Pink Slush / 12pk Energy Drink & 30srv Pre-Workout</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c6"></span>
+        <span class="more">+ 2 more</span>
+      </div>
+
+      <span class="price">$39.98</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+<!-- ✅ Product 5 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/preworkout_30serve_Breezberry_profile_web_400x.png?v=1687466075" alt="">
+    <div class="product-info">
+      <span class="type">DRINKS</span>
+      <h3>ENERGY STICKS</h3>
+      <p>Cosmic Stardust / 10 pack</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c6"></span>
+        
+      </div>
+
+      <span class="price">$13.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+<!-- ✅ Product 6 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/DragonFruitRush-ProductFront_400x.png?v=1747676476" alt="">
+    <div class="product-info">
+      <span class="type">FITNESS</span>
+      <h3>PRE-WORKOUT</h3>
+      <p>Breezeberry / 30 servings</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c6"></span>
+        <span class="color c5"></span>
+        <span class="color c4"></span>        
+        <span class="more">+ 5 more</span>
+      </div>
+
+      <span class="price">$39.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+<!-- ✅ Product 7 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/new_PWO__blue_slush_front_400x.png?v=1740604177" alt="">
+    <div class="product-info">
+      <span class="type">FITNESS</span>
+      <h3>PRE-WORKOUT+</h3>
+      <p>Blue Slush / 30 Servings</p>
+
+      <div class="colors">
+        <span class="color c5"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c6"></span>
+        <span class="color c4"></span>
+        <span class="color c1"></span>
+        
+      </div>
+
+      <span class="price">$44.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+
+
+<!-- ✅ Product 8 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/ProteinBar_1serve_profile_PBJ_web_400x.png?v=1687379780" alt="">
+    <div class="product-info">
+      <span class="type">SNACKS</span>
+      <h3>PROTEIN BAR</h3>
+      <p>Peanut Butter & Jelly / 12 pack</p>
+
+      <div class="colors">
+        <span class="color c5"></span>
+        <span class="color c2"></span>
+        <span class="color c4"></span>
+        <span class="color c6"></span>
+      </div>
+
+      <span class="price">$29.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+<!-- ✅ Product 9 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/New_Front_Updated_Gummi_Sour_Melon_Slilces_png_400x.png?v=1706890060" alt="">
+    <div class="product-info">
+      <span class="type">Essentials</span>
+      <h3>SUPER GREENS</h3>
+      <p>Wild Berry / 10 pack</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c6"></span>
+        <span class="more">+ 2 more</span>
+      </div>
+
+      <span class="price">$49.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+
+<!-- ✅ Product 10 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/0004_Supergreens_30serve_profile_web_8060c655-74d8-4fec-805f-0810c4658e6a_400x.png?v=1721838465" alt="">
+    <div class="product-info">
+      <span class="type">DRINKS</span>
+      <h3>ENERGY STICKS</h3>
+      <p>Cosmic Stardust / 30 day supply</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c3"></span>
+      </div>
+
+      <span class="price">$13.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+
+<!-- ✅ Product 11 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/Creatine_Front_2_400x.png?v=1746202524" alt="">
+    <div class="product-info">
+      <span class="type">FITNESS</span>
+      <h3>CREATINE</h3>
+      <p>30 day supply</p>
+
+      <span class="price">$39.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+<!-- ✅ Product 12 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/balance_30serve_capsules_web_400x.png?v=1699478697" alt="">
+    <div class="product-info">
+      <span class="type">Essentials</span>
+      <h3>BALANCE CAPSULES</h3>
+      <p>30 day supply</p>
+
+      <span class="price">$24.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+
+<!-- ✅ Product 13 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/prenatal_60serve_capsules_web_400x.png?v=1699638388" alt="">
+    <div class="product-info">
+      <span class="type">Essentials</span>
+      <h3>PRENATAL</h3>
+      <p>30 day supply</p>
+
+      <span class="price">$49.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+
+<!-- ✅ Product 14 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/FatBurner_Capsule_60serve_web_400x.png?v=1690997793" alt="">
+    <div class="product-info">
+      <span class="type">Essentials</span>
+      <h3>FAT BURNER</h3>
+      <p>60 day supply </p>
+
+      <span class="price">$39.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+<!-- ✅ Product 15 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/WheyProtein_30serve_Munchies_web_400x.png?v=1687469749" alt="">
+    <div class="product-info">
+      <span class="type">FITNESS</span>
+      <h3>WHEY PROTEIN</h3>
+      <p>Munchies / 30 pack</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c6"></span>
+      </div>
+
+      <span class="price">$44.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+<!-- ✅ Product 16 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/BCAA_HawaiianShavedIce_30serve_LayFlat_web_400x.png?v=1699479621" alt="">
+    <div class="product-info">
+      <span class="type">FITNESS</span>
+      <h3>BCAA</h3>
+      <p>Hawaiin Shaved Ice/ 30 pack</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+      </div>
+
+      <span class="price">$39.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+<!-- ✅ Product 17 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/Fruity_Cereal_Front_1200x.png?v=1729712017" alt="">
+    <div class="product-info">
+      <span class="type">DRINKS</span>
+      <h3>30G PROTEIN SHAKE</h3>
+      <p>Fruity Cereal / 12 pack</p>
+
+      <div class="colors">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+      </div>
+
+      <span class="price">$34.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+
+
+
+
+<!-- ✅ Product 4 -->
+<div class="product-card">
+    <img src="https://www.alaninu.com/cdn/shop/files/collagen_14serve_unflavored._profilev2v2_1200x.png?v=1699570183" alt="">
+    <div class="product-info">
+      <span class="type">Essentials</span>
+      <h3>COLLAGEN PEPTIDES</h3>
+      <p>Unflavored / 14 day supply</p>
+
+
+
+      <span class="price">$29.99</span>
+      <button class="add-cart-btn">Add to cart</button>
+    </div>
+</div>
+</section>
+
+<footer class="alani-footer">
+  <div class="footer-links">
+
+  <div>
+  <p>SHOP</p>
+  <p>REWARDS</p>
+  <p>RECIPES</p>
+  <p>AMBASSADOR PROGRAM</p>
+  </div>
+  
+    <div>
+      <p>FIND A STORE</p>
+      <p>ABOUT ALANI</p>
+      <p>FAQS</p>
+      <p>RETURNS POLICY</p>
+      <p>SHIPPING POLICY</p>
+    </div>
+
+    <div>
+      <p>FOLLOW US</p>
+      <div class="box">
+      <p>INSTAGRAM</p>
+      <p>TIKTOK</p>
+      <p>META</p>
+      <p>X</p>
+      </div>
+    </div>
+
+    <div>
+      <button class="footer-btn">DO NOT SELL OR SHARE MY PERSONAL INFORMATION</button>
+       <div class="logo" >
+      <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif">
+    </div>
+    </div>
+
+      </div>
+      
+</footer>
+
+<section>
+  <div class="footer-bottom">
+    <div class="left">
+      © 2025 Alani Nu, LLC.
+    </div>
+
+    <div class="right">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+      <span>Accessibility Statement</span>
+      <span>Contact</span>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alani- Clone</title>
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+
+         body {
+      font-family:  Nunito, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+      .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 40px;
+        border-bottom: 1px solid white;
+        background-color: white;
+      }
+
+      .logo img{
+        height: 40px;
+        width: auto;
+        cursor: pointer;
+    
+      }
+
+      
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      transition: color 0.3s;
+      color:grey;
+      display: flex-start;
+      
+    }
+
+    .nav-links a:hover {
+      color: aqua;
+    }
+      
+        .icons span {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .icons img{
+      width: 25px;
+      color: #555;
+      gap: 3rem;
+    }
+
+
+  .hero{
+  
+    background:url('./UPDATED_NEW_Evergreen_Homepage_Banner_-_Desktop_1_1_3f9ee5f9-a9ec-4e91-8990-d6ed3f43be1c_2500x.webp') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    width: 100%;
+  
+
+  }
+
+  .hero-content{
+    max-width: 600px;
+  }
+
+  .hero h1{
+    font-size: 3.22rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .hero p{
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    color: white;
+    
+  }
+
+  .btn {
+    background: #56c7c2;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  .btn:hover{
+    background: #45b3ae;
+  }
+
+
+  .info{
+    background: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-size: 2.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: auto;
+  }
+
+
+  .categories {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: white;
+
+  }
+
+  .categories h2{
+    color: #4bc0c8;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .categories p{
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .cards{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    
+
+  }
+
+  .card{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  
+  }
+
+  .card img{
+    width: 100%;
+    display: block;
+  }
+
+  .card h3{
+    background: #56c7c2;
+    color: white;
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+
+  .btn.purple {
+  background-color: #b98fe0;
+  margin-top: 2rem;
+}
+
+.btn.purple:hover {
+  background-color: #9b59b6;
+}
+
+.promo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.promo-box, .promo-box2 {
+  width: 50%;
+  height: 80vh;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.promo-box {
+  background: url('https://www.alaninu.com/cdn/shop/files/rewards-homepage-mobile_1_1200x.jpg?v=1667505696') center/cover no-repeat;
+}
+
+.promo-box2 {
+  background: url('https://www.alaninu.com/cdn/shop/files/NEW_Bundle_Banner_-_Homepage_Web__1_a0c04e46-3614-42fe-8610-78c4b56ed162_1200x.jpg?v=1725024286') center/cover no-repeat;
+}
+
+.promo-content {
+  text-align: center;
+  color: white;
+  padding-bottom: 40px;
+  width: 80%;
+}
+
+.promo-content h2 {
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.promo-content p {
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.promo-btn {
+  background: #8972D8;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.promo-btn:hover {
+  background: #6d5bbc;
+}
+
+.alani-footer{
+  background: linear-gradient(to right, #c5ffe9, #d8c8ff );
+  padding: 50px 10%;
+  color: #5c5b5b;
+  font: 14px;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footer-links div p{
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+
+.footer-btn{
+  background: #7b67d0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  width: 220px;
+  font-weight: bold;
+
+}
+
+.box{
+  font-weight: lighter;
+}
+
+
+.footer-bottom{
+  background: #7b67d0;
+  padding: 20px 10%;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* right side text spacing */
+.footer-bottom .right span {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media(max-width: 600px){
+  .footer-bottom{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom .right span{
+    margin-left: 10px;
+  }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo" >
+      <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./shop.html">Shop</a></li>
+        <li><a href="./recipe.html">Recipe</a></li>
+        <li><a href="./learn.html">Learn</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <span>
+        <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-512.png">
+      </span>
+      <span>
+        <img src="https://cdn0.iconfinder.com/data/icons/bazaar-1/64/store_shop_restaurant_grow_shop_mobile_store_coffee_shop_business_mall_stores_commerce_-128.png">
+      </span>
+      <span>
+        <img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/user4-128.png">
+      </span>
+      <span>
+        <img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/bag4-128.png">
+      </span>
+    </div>
+
+
+  </header>
+
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+   <h1>Pumped up pick-me-ups</h1> 
+   <p>Shop snacks, sips , supps, and more!</p>
+   <button class="btn">Shop All</button>
+  </div>
+</section>
+
+<section class="info">
+  <p><strong>Here’s the scoop.</strong> Wellness should feel good and taste good. That’s why we offer a range of delicious, convenient products that support your goals while bringing bright, bold flavors to your daily routine.</p>
+  </section>
+
+  <!-- Categories Section -->
+<section class="categories">
+  <h2>Empowering your every more</h2>
+  <p>Shop snacks, sips, supps, and more!</p>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://www.alaninu.com/cdn/shop/files/Self_Navigation_Hover_Banner_800x.jpg?v=1699552727" alt="Essentials"/>
+      <h3>Essentials</h3>
+        </div>
+
+    <div class="card">
+      <img src="https://www.alaninu.com/cdn/shop/files/Updated_Fitness_Slider_800x.jpg?v=1734377564" alt="Fitness"/>
+      <h3>Fitness</h3>
+        </div>    
+        
+    <div class="card">
+      <img src="https://www.alaninu.com/cdn/shop/files/Drinks_Navigation_Hover_Banner_800x.jpg?v=1699552727" alt="Drinks"/>
+      <h3>Drinks</h3>
+        </div>
+
+    <div class="card">
+      <img src="https://www.alaninu.com/cdn/shop/files/Snacks_Navigation_Hover_Banner_800x.jpg?v=1699552727" alt="Snacks">
+      <h3>Snacks</h3>
+    </div> 
+    </div>   
+
+<button class="btn purple">Shop All Products</button>
+   
+</section>
+
+<section class="promo-section">
+  <div class="promo-box">
+    <!-- <img src="https://www.alaninu.com/cdn/shop/files/rewards-homepage-mobile_1_1200x.jpg?v=1667505696"> -->
+   <div class="promo-content">
+      <h2>REWARDS</h2>
+      <p>Join our rewards program for exclusive discounts and additional perks!</p>
+      <button class="btn promo-btn">LEARN MORE</button>
+    </div>
+  </div>
+
+
+    <div class="promo-box2">
+    <!-- <img src="https://www.alaninu.com/cdn/shop/files/rewards-homepage-mobile_1_1200x.jpg?v=1667505696"> -->
+   <div class="promo-content">
+      <h2>REWARDS</h2>
+      <p>Join our rewards program for exclusive discounts and additional perks!</p>
+      <button class="btn promo-btn">LEARN MORE</button>
+    </div>
+  </div>
+</section>
+
+<footer class="alani-footer">
+  <div class="footer-links">
+
+  <div>
+  <p>SHOP</p>
+  <p>REWARDS</p>
+  <p>RECIPES</p>
+  <p>AMBASSADOR PROGRAM</p>
+  </div>
+  
+    <div>
+      <p>FIND A STORE</p>
+      <p>ABOUT ALANI</p>
+      <p>FAQS</p>
+      <p>RETURNS POLICY</p>
+      <p>SHIPPING POLICY</p>
+    </div>
+
+    <div>
+      <p>FOLLOW US</p>
+      <div class="box">
+      <p>INSTAGRAM</p>
+      <p>TIKTOK</p>
+      <p>META</p>
+      <p>X</p>
+      </div>
+    </div>
+
+    <div>
+      <button class="footer-btn">DO NOT SELL OR SHARE MY PERSONAL INFORMATION</button>
+       <div class="logo" >
+      <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif">
+    </div>
+    </div>
+
+      </div>
+</footer>
+
+<section>
+  <div class="footer-bottom">
+    <div class="left">
+      © 2025 Alani Nu, LLC.
+    </div>
+
+    <div class="right">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+      <span>Accessibility Statement</span>
+      <span>Contact</span>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

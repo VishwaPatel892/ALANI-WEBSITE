@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alani Rewards Page</title>
+    <style>
+        body {
+            font-family:  Nunito, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+.navbar{
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 40px;
+  background: white;
+}
+
+.logo img{
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: color .3s ;
+}
+
+.nav-links a:hover{
+    color: aqua;
+}
+
+.icons span{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icons img{
+    width: 25px;
+}
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://www.alaninu.com/cdn/shop/files/NEW_Rewards_Banner_-_Collections_page_1_ac196236-3458-495c-ad5d-9d4482ce1164.jpg?v=1725024442') center/cover no-repeat;
+            height: 350px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .rewards-nav {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .rewards-nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rewards-nav a {
+            text-decoration: none;
+            color: #777;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 15px 5px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .rewards-nav a.active {
+            color: #000;
+            border-bottom: 3px solid #000;
+        }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .program-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .intro-text {
+            background-color: #cffaf0;
+            padding: 80px 60px;
+            text-align: left;
+        }
+
+        .intro-text h2 {
+            font-size: 2.5rem;
+            margin: 10px 0 20px 0;
+            color: #222;
+        }
+
+        .intro-text p {
+            line-height: 1.6;
+            max-width: 500px;
+            color: #444;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: #6a4c93;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #8e7cc3;
+            color: white;
+        }
+
+        .status-levels {
+            background-color: #fef9c3;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status-levels .eyebrow {
+            text-align: center;
+        }
+
+        .status-cards {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .status-card {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .status-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .status-card h3 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+        }
+
+        .status-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .collect-points {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .collect-points h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        .point-item {
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 120px;
+            height: 20px;          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: white;
+            margin: 0 auto 15px auto;
+        }
+
+        .icon-circle img{
+            margin-bottom: 50px;
+            width: 100px;
+        }
+        .point-item h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+        }
+
+        .point-item p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0;
+        }
+
+        .rewards-table {
+            background-color: #cffaf0;
+            padding: 60px 20px;
+        }
+
+        .rewards-table h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .table-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            align-items: center;
+        }
+
+        .table-row div {
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        .table-header {
+            background-color: #fff;
+        }
+
+        .table-header div:not(:first-child) {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .table-header .icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .table-row:not(.table-header) div:first-child {
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #555;
+            letter-spacing: 0.5px;
+        }
+
+        .table-row:not(.table-header) div:not(:first-child) {
+            text-align: center;
+            color: #333;
+        }
+
+        .row-yellow {
+            background-color: #fef9c3;
+        }
+
+        .row-pink {
+            background-color: #fde8f0;
+        }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p,
+        .faq-item li {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .faq-item ol {
+            padding-left: 20px;
+        }
+
+        .faq-item a {
+            color: #6a4c93;
+            /* Using the purple from the footer */
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+     .alani-footer{
+ background: linear-gradient(90deg, #cceee8, #e0c8eb, #f9d9b8);
+  padding: 50px 10%;
+  color: #5c5b5b;
+  font: 14px;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footer-links div p{
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+
+.footer-btn{
+  background: #7b67d0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  width: 220px;
+  font-weight: bold;
+
+}
+
+.box{
+  font-weight: lighter;
+}
+
+
+.footer-bottom{
+  background: #7b67d0;
+  padding: 20px 10%;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* right side text spacing */
+.footer-bottom .right span {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media(max-width: 600px){
+  .footer-bottom{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom .right span{
+    margin-left: 10px;
+  }
+}
+
+
+         </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+    <div class="logo">
+        <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif" alt="">
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./recipe.html">Recipe</a></li>
+            <li><a href="./learn.html">Learn</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <span><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-512.png"></span>
+        <span><img src="https://cdn0.iconfinder.com/data/icons/bazaar-1/64/store_shop_restaurant_grow_shop_mobile_store_coffee_shop_business_mall_stores_commerce_-128.png"></span> 
+        <span><img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/user4-128.png"></span>   
+        <span><img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/bag4-128.png"></span>        
+    </div>
+</header>
+
+    <section class="hero">
+        <h1>Rewards</h1>
+    </section>
+
+    <nav class="rewards-nav">
+        <ul>
+            <li><a href="#collect-points" class="active">COLLECT POINTS</a></li>
+            <li><a href="#reward-levels">REWARD LEVELS</a></li>
+            <li><a href="#faqs">FAQS</a></li>
+        </ul>
+    </nav>
+
+    <section class="program-intro">
+        <div class="intro-text">
+            <p class="eyebrow">OUR PROGRAM</p>
+            <h2>PERKS WITH EVERY PURCHASE</h2>
+            <p>Our Alani Rewards Program was made for YOU!</p>
+            <p>Create an account or log in to earn points with every purchase. Get exclusive discounts, personalized
+                perks and redeem points for savings. Check out other ways you can earn points and rewards you can grab
+                below.</p>
+            <div class="buttons">
+                <button class="btn btn-primary">JOIN NOW</button>
+                <button class="btn btn-secondary">LOG IN</button>
+            </div>
+        </div>
+        <div class="status-levels">
+            <p class="eyebrow">STATUS LEVELS</p>
+            <div class="status-cards">
+                <div class="status-card">
+                    <div class="icon">😊</div>
+                    <h3>ALANI INSIDER</h3>
+                    <p>Spend $0 - $749 annually</p>
+                </div>
+                <div class="status-card">
+                    <div class="icon">✨</div>
+                    <h3>ALANI VIP</h3>
+                    <p>Spend $750+ annually</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collect-points" id="collect-points">
+        <h2>COLLECT POINTS</h2>
+
+        <p class="eyebrow">ONE-TIME ONLY</p>
+        <div class="points-grid">
+            <div class="point-item">
+                <div class="icon-circle" >
+                    <img src="https://www.alaninu.com/cdn/shop/files/Welcome_3x_02083706-7183-4ba1-90be-62e694343494.png?v=1664283555">
+                </div>
+                <h4>WELCOME</h4>
+                <p>50 POINTS</p>
+            </div>
+            <div class="point-item">
+                <div class="icon-circle">
+                    <img src="https://www.alaninu.com/cdn/shop/files/Instagram_Follow_3x_97eb565d-5b4a-479d-b063-5cb967362a58.png?v=1664283719">
+                </div>
+                <h4>INSTAGRAM FOLLOW</h4>
+                <p>25 POINTS</p>
+            </div>
+            <div class="point-item">
+                <div class="icon-circle">
+                    <img src="https://www.alaninu.com/cdn/shop/files/Facebook_Like_3x_2a749618-9a11-4feb-a840-926bb63b9510.png?v=1664283744">
+                </div>
+                <h4>FACEBOOK FOLLOW</h4>
+                <p>25 POINTS</p>
+            </div>
+            <div class="point-item">
+                <div class="icon-circle">
+                    <img src="https://www.alaninu.com/cdn/shop/files/Cake_Icon_3x_d5196253-8324-45a0-977c-30b69184aa6a.png?v=1664283756">
+                </div>
+                <h4>HAPPY BIRTHDAY</h4>
+                <p>20% OFF</p>
+            </div>
+        </div>
+
+        <p class="eyebrow">COME BACK FOR MORE</p>
+        <div class="points-grid">
+            <div class="point-item">
+                <div class="icon-circle">
+                    <img src="https://www.alaninu.com/cdn/shop/files/Place_and_Order_3x_bb8b2091-1d69-428c-a4ec-91b372cdb8a3.png?v=1664284313">
+                </div>
+                <h4>PLACE AN ORDER</h4>
+                <p>--</p>
+            </div>
+            <div class="point-item">
+                <div class="icon-circle">
+                    <img src="https://www.alaninu.com/cdn/shop/files/Twitter_Share_3x_339fdbb1-4d11-4b26-8fdc-6054d50468c0.png?v=1664284337">
+                </div>
+                <h4>TWITTER SHARE</h4>
+                <p>10 POINTS</p>
+                <p>(ONCE PER MONTH)</p>
+            </div>
+            <div class="point-item">
+                <div class="icon-circle">
+                    <img src="https://www.alaninu.com/cdn/shop/files/Product_Review_3x_2d1212d0-1fa3-4dac-bc46-d40b04bb5fb0_1.png?v=1664284382">
+                </div>
+                <h4>PRODUCT REVIEW</h4>
+                <p>--</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rewards-table" id="reward-levels">
+        <h2>TWO LEVELS OF REWARDS</h2>
+        <div class="table-container">
+            <div class="table-row table-header">
+                <div></div>
+                <div><span class="icon">😊</span> ALANI INSIDER</div>
+                <div><span class="icon">✨</span> ALANI VIP</div>
+            </div>
+            <div class="table-row row-yellow">
+                <div>SPEND</div>
+                <div>$0 - $749</div>
+                <div>$750+</div>
+            </div>
+            <div class="table-row row-pink">
+                <div>POINT VALUE</div>
+                <div>$1 = 1 Point</div>
+                <div>$1 = 2 Points</div>
+            </div>
+            <div class="table-row row-yellow">
+                <div>REFER A FRIEND</div>
+                <div>✓</div>
+                <div>✓</div>
+            </div>
+            <div class="table-row row-pink">
+                <div>BIRTHDAY REWARD</div>
+                <div>✓</div>
+                <div>✓</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faqs">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What is the Alani Rewards Program?</h3>
+            <p>The Alani Rewards Program was created to give YOU perks to enjoy. We love having you be a part of our
+                Alani Fam and with this program you can earn points and redeem them for savings, get access to
+                personalized perks and other exclusive discounts plus so much more.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I sign up for Alani Rewards?</h3>
+            <p>It’s free to join and easy to sign up! Just create an Alani Nu account <a href="#">here</a>.</p>
+            <p>If you’ve already created an Alani Nu account in the past for a previous order – great news, you were
+                also automatically enrolled to our Alani Rewards Program!</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I earn Alani Points?</h3>
+            <p>There are several ways you can earn points! You can earn points on every dollar you spend on AlaniNu.com,
+                for every product review you leave and for following us on social media! To ensure you are earning these
+                points, double check and make sure you are logged in to your Alani Nu account.</p>
+            <p>All points earned will automatically be added to your account – no waiting necessary!</p>
+            <p>Want to see what you can redeem points for? Check this out: <a href="#">Available Rewards</a>.</p>
+            <p>If you experience any issues, you can reach out to our Customer Service Team at <a
+                    href="mailto:contact@alaninu.com">contact@alaninu.com</a> and one of our reps will be able to help!
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do Alani Points expire?</h3>
+            <p>No, Alani Points do not expire and will roll over each year!</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I use my Alani Points?</h3>
+            <p>You’ll be able to use your points to redeem them for rewards during your check out process. To redeem
+                rewards, follow these three easy steps:</p>
+            <ol>
+                <li>Log in to your Alani Nu account when you’re ready to shop</li>
+                <li>Once you are at the checkout page, you’ll see an option to redeem points for rewards – select the
+                    amount you choose to redeem.</li>
+                <li>Click “Apply Points” and you’ll see the reward applied to your order.</li>
+            </ol>
+            <p>Want to see what you can redeem points for? Check this out: <a href="#">Available Rewards</a>.</p>
+            <p>If you have additional questions, please contact our Customer Service Team at <a
+                    href="mailto:contact@alaninu.com">contact@alaninu.com</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What are the different Alani Rewards Membership Statuses?</h3>
+            <p>The Alani Rewards Membership Statuses are below:</p>
+            <p><strong>Alani Insider (spend $0-$749 annually):</strong> You will earn 1 point for every $1 spent and
+                receive a yearly Birthday perk.</p>
+            <p><strong>Alani VIP (spend $750+ annually):</strong> You will earn 2 points for every $1 spent and receive
+                a yearly Birthday perk.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I lose my current Alani Rewards Membership status?</h3>
+            <p>Our statuses are measured by the amount spent on AlaniNu.com. Once you achieve Alani Insider or Alani VIP
+                status, your profile will automatically update, and you’ll start getting perks associated with your
+                status.</p>
+            <p>If you do not meet the membership status spend requirement, your account will reset each year from the
+                day your Alani Nu account was created.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I check my points balance and membership status?</h3>
+            <p>To view your balance and membership details, log in to your Alani Nu account and visit your rewards
+                dashboard. There, you can check out all your available points, membership status and rewards you can
+                redeem them for.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does your “Refer a Friend” perk work?</h3>
+            <p>We love welcoming new friends to the Alani Nu Fam! Our Refer a Friend perk lets you gift your friends 10%
+                off their very first order of $50 or more (excludes shipping and taxes) on AlaniNu.com.</p>
+            <p>For spreading the love, you’ll also get 10% off your next order!</p>
+            <p>To start sharing, click here: <a href="#">Refer a Friend</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Have additional questions?</h3>
+            <p>Reach out to our Customer Service Team at <a href="mailto:contact@alaninu.com">contact@alaninu.com</a>
+                and they’ll be happy to help!</p>
+        </div>
+    </section>
+
+<footer class="alani-footer">
+  <div class="footer-links">
+
+  <div>
+  <p>SHOP</p>
+  <p>REWARDS</p>
+  <p>RECIPES</p>
+  <p>AMBASSADOR PROGRAM</p>
+  </div>
+  
+    <div>
+      <p>FIND A STORE</p>
+      <p>ABOUT ALANI</p>
+      <p>FAQS</p>
+      <p>RETURNS POLICY</p>
+      <p>SHIPPING POLICY</p>
+    </div>
+
+    <div>
+      <p>FOLLOW US</p>
+      <div class="box">
+      <p>INSTAGRAM</p>
+      <p>TIKTOK</p>
+      <p>META</p>
+      <p>X</p>
+      </div>
+    </div>
+
+    <div>
+      <button class="footer-btn">DO NOT SELL OR SHARE MY PERSONAL INFORMATION</button>
+       <div class="logo" >
+      <img src="./Alani_Logo_New_68ffd03e-ed6d-45ae-9d84-97f57d8061cb_200x.avif">
+    </div>
+    </div>
+
+      </div>
+      
+</footer>
+
+<section>
+  <div class="footer-bottom">
+    <div class="left">
+      © 2025 Alani Nu, LLC.
+    </div>
+
+    <div class="right">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+      <span>Accessibility Statement</span>
+      <span>Contact</span>
+    </div>
+  </div>
+</body>
+
+</html>
