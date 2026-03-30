@@ -7,7 +7,7 @@ This project is a modern multi-page e-commerce website inspired by premium lifes
 ## 🔗 Live Demo
 
 - 🌐 https://your-alani-site-link.netlify.app/  
-- 🎥 https://your-demo-video-link  
+- 🎥 https://youtu.be/MWzazkEWpZI
 
 ---
 
